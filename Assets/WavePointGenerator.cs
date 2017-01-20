@@ -45,8 +45,8 @@ public class WavePointGenerator : MonoBehaviour {
 
 
 	void FixedUpdate (){
-		newHeight = amplitudeOne * Mathf.Sin ((frequencyOne * Time.time + xVersatzOne)) + yVersatzOne
-			+ 		amplitudeTwo * Mathf.Sin ((frequencyTwo * Time.time + xVersatzTwo)) + yVersatzTwo;
+		newHeight = amplitudeOne * Mathf.Sin ((float)(frequencyOne * Time.time + xVersatzOne)) + yVersatzOne
+			+ 		amplitudeTwo * Mathf.Sin ((float)(frequencyTwo * Time.time + xVersatzTwo)) + yVersatzTwo;
 		
 		pointQueue.Enqueue(newHeight);
 		if (pointQueue.Count >= maxPoints){
