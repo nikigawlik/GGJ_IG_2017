@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+ * Generates 1 point/frame to be used as the y- coordinate of a wave
+ * access pointQueue!
+ * use as script for your wave
+ */
+
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +17,8 @@ public class WavePointGenerator : MonoBehaviour {
 	public int maxPoints;
 
 	private double newHeight;
+
+
 
 
 	//Wave One
@@ -44,6 +54,12 @@ public class WavePointGenerator : MonoBehaviour {
 
 
 	void FixedUpdate (){
+
+		//change aplitude gradually 
+
+
+
+
 		newHeight = amplitudeOne * Mathf.Sin ((float)(frequencyOne * Time.time + xVersatzOne)) + yVersatzOne
 			+ 		amplitudeTwo * Mathf.Sin ((float)(frequencyTwo * Time.time + xVersatzTwo)) + yVersatzTwo;
 		
