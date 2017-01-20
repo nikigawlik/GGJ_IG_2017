@@ -13,24 +13,20 @@ using UnityEngine;
 public class WavePointGenerator : MonoBehaviour {
 
 	//List of all HEIGHTS of all Wavepoints on screen
-	public Queue<double> pointQueue;
+	public List<float> pointList = new List<float>();
 	public int maxPoints;
-
-	private double newHeight;
-
-
 
 
 	//Wave One
-	public double amplitudeOne;
-	public double frequencyOne;
-	public double xVersatzOne;
-	public double yVersatzOne;
+	public float amplitudeOne;
+	public float frequencyOne;
+	public float xVersatzOne;
+	public float yVersatzOne;
 	//Wave Two
-	public double amplitudeTwo;
-	public double frequencyTwo;
-	public double xVersatzTwo;
-	public double yVersatzTwo;
+	public float amplitudeTwo;
+	public float frequencyTwo;
+	public float xVersatzTwo;
+	public float yVersatzTwo;
 
 
 
@@ -60,12 +56,12 @@ public class WavePointGenerator : MonoBehaviour {
 
 
 
-		newHeight = amplitudeOne * Mathf.Sin ((float)(frequencyOne * Time.time + xVersatzOne)) + yVersatzOne
+		float newHeight = amplitudeOne * Mathf.Sin ((float)(frequencyOne * Time.time + xVersatzOne)) + yVersatzOne
 			+ 		amplitudeTwo * Mathf.Sin ((float)(frequencyTwo * Time.time + xVersatzTwo)) + yVersatzTwo;
 		
-		pointQueue.Enqueue(newHeight);
-		if (pointQueue.Count >= maxPoints){
-			pointQueue.Dequeue ();
+		pointList.Add(newHeight);
+		if (pointList.Count >= maxPoints){
+			pointList.Remove (0);
 
 		}
 
