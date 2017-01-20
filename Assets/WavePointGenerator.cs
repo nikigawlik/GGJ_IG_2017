@@ -26,21 +26,20 @@ public class WavePointGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		newHeight = 0;
-		//Wave One
-		frequencyOne = 1;
-		amplitudeOne = 1;
-		xVersatzOne = 0;
-		yVersatzOne = 0;
-		//Wave Two
-		amplitudeTwo = 0;
-		frequencyTwo = 0;
-		xVersatzTwo = 0;
-		yVersatzTwo = 0;
+//		newHeight = 0;
+//		//Wave One
+//		frequencyOne = 1;
+//		amplitudeOne = 1;
+//		xVersatzOne = 0;
+//		yVersatzOne = 0;
+//		//Wave Two
+//		amplitudeTwo = 0;
+//		frequencyTwo = 0;
+//		xVersatzTwo = 0;
+//		yVersatzTwo = 0;
 
 	}
 	
-	// Update is called once per frame
 
 
 
