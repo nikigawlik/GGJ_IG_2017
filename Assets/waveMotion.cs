@@ -14,6 +14,7 @@ public class waveMotion : MonoBehaviour
     {
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
         lineRenderer.numCornerVertices = rund;
+        lineRenderer.numCornerVertices = rund;
         lineRenderer.numPositions = tiles;
     }
 
@@ -22,10 +23,11 @@ public class waveMotion : MonoBehaviour
     {
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
         lineRenderer.numCornerVertices = rund;
+        lineRenderer.numCornerVertices = rund;
         int i = 0;
         while (i < lineRenderer.numPositions)
         {
-            Vector3 pos = new Vector3(-10 + i * 0.1F, Mathf.Sin(i + Time.time));
+            Vector3 pos = new Vector3(-10 + i*2, Mathf.Sin(i + Time.time));
             lineRenderer.SetPosition(i, pos);
             i++;
         }
