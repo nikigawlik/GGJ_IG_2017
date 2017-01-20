@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveSurf : MonoBehaviour {
 
-	public Queue<double> wave; // waves
+	public Queue<double> wave; // TODO this will be wave yo
 
 	private Vector2 velocity = new Vector2 (0, 0);
 
@@ -13,7 +13,6 @@ public class WaveSurf : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 
 	void FixedUpdate () {
@@ -22,7 +21,6 @@ public class WaveSurf : MonoBehaviour {
 		velocity.y += getGravity();
 
 		this.transform.position = pos + velocity;
-		//this.transform.position += 100;
 	}
 
 	float getGravity() {
