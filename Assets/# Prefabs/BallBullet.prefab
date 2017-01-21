@@ -21,9 +21,8 @@ GameObject:
   - component: {fileID: 4516760878569948}
   - component: {fileID: 212948103322842966}
   - component: {fileID: 114933501249502994}
-  - component: {fileID: 50418429645969838}
-  - component: {fileID: 58790687805862870}
   - component: {fileID: 96278481661804714}
+  - component: {fileID: 61825771147989262}
   m_Layer: 0
   m_Name: BallBullet
   m_TagString: Untagged
@@ -44,28 +43,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50418429645969838
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1244671290671116}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &58790687805862870
-CircleCollider2D:
+--- !u!61 &61825771147989262
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -73,11 +52,11 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1}
 --- !u!96 &96278481661804714
 TrailRenderer:
   serializedVersion: 2

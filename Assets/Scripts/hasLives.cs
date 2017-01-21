@@ -13,7 +13,6 @@ public class hasLives : MonoBehaviour {
 		pos.x = 0;
 		transform.position = pos;
 	}
-
 	void getHit(){
 		lives--;
 		if (lives <= 0) {

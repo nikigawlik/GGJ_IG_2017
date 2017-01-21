@@ -17,7 +17,13 @@ public class BulletController : MonoBehaviour {
 		screenWidth = 2f * cam.orthographicSize * cam.aspect;
 		screenHeight = 2f * cam.orthographicSize;
 	}
-	
+
+	void OnTriggerEnter2D (Collider2D coll){
+		if (coll) {
+			Destroy (this.gameObject);
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		this.transform.position = this.transform.position  + speed/2;
