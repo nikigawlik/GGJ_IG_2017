@@ -13,24 +13,50 @@ public class WaveSurf : MonoBehaviour {
 	private WavePointGenerator wavePointGen;
 	private waveMotion waveMot;
 
+	private bool airborne = false;
+
+	private Vector2 prevPos;
+
 	// Use this for initialization
 	void Start () {
 		wavePointGen = lineHolder.GetComponent<WavePointGenerator> ();
 		waveMot = lineHolder.GetComponent<waveMotion> ();
+
+		prevPos = transform.position;
 	}
 
 	void FixedUpdate () {
 		Vector2 pos = this.transform.position;
 
-		velocity.y += getGravity();
 
-		pos.y = waveMot.GetYAt (pos.x);
+		// jump
+		if (Input.GetKeyDown ("space")) { //TODO change this ;)
+			if (!airborne) {
+				airborne = true;
+				float deltaV = transform.position.y - prevPos.y;
+				velocity.y = deltaV;
+			} else {
+				airborne = false; //TODO check for line proximity
+			}
+		}
 
-		Debug.Log (pos.x);
+		//snap
+		if (!isAirborne ()) {
 
-		this.transform.position = pos + velocity;
+			pos.y = waveMot.GetYAt (pos.x);
+		}
+		else {
+			velocity.y += getGravity ();
+			pos = pos + velocity;
+		}
 
+		prevPos = transform.position;
+		this.transform.position = pos;
 		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 180f / Mathf.PI * Mathf.Atan(waveMot.GetSlopeAt (pos.x))));
+	}
+
+	bool isAirborne() {
+		return airborne;
 	}
 
 	float getGravity() {
