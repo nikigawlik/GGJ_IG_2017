@@ -272,14 +272,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e2840259138b49a73c74b32f898c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitudeRange: 2
-  amplitudeChangeProbability: 20
-  timeSpeedRange: 1
-  timeSpeedChangeProbability: 20
-  xVersatzRange: 20
-  xVersatzChangeProbability: 10
-  yVersatzRange: 0
-  yVersatzChangeProbability: 0
+  amplitudeMax: 2
+  amplitudeMin: 0.5
+  amplitudeProbability: 1
+  timeSpeedMax: 0.2
+  timeSpeedMin: 0.05
+  timeSpeedProbability: 1
+  xVersatzMax: 0
+  xVersatzMin: 0
+  xVersatzProbability: 0
+  yVersatzMax: 0
+  yVersatzMin: 0
+  yVersatzProbability: 0
 --- !u!1 &2041119666
 GameObject:
   m_ObjectHideFlags: 0
