@@ -76,6 +76,8 @@ GameObject:
   - component: {fileID: 50965295265548348}
   - component: {fileID: 199785374263634432}
   - component: {fileID: 198353930201218140}
+  - component: {fileID: 111423976693121368}
+  - component: {fileID: 95881990284948842}
   m_Layer: 0
   m_Name: Char (1)
   m_TagString: Untagged
@@ -172,6 +174,37 @@ BoxCollider2D:
   m_Offset: {x: -0.43926996, y: 0.95175153}
   serializedVersion: 2
   m_Size: {x: 3.0814612, y: 2.6221461}
+--- !u!95 &95881990284948842
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884475864434746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c3adae0ef4dace4f8779ab11e6247df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111423976693121368
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884475864434746}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114035485147099176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,7 +307,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1504340687
+  randomSeed: -1911844169
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2869,7 +2902,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1804547850
+  randomSeed: -347375758
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5464,7 +5497,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1070017210
+  randomSeed: 545466979
   InitialModule:
     serializedVersion: 3
     enabled: 1

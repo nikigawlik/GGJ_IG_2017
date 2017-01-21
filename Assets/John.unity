@@ -861,8 +861,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5e2840259138b49a73c74b32f898c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitudeMax: 1
-  amplitudeMin: 0.17
+  amplitudeMax: 1.7
+  amplitudeMin: 0.5
   amplitudeProbability: 1
   timeSpeedMax: 0.07
   timeSpeedMin: 0.01
@@ -871,7 +871,7 @@ MonoBehaviour:
   xVersatzMin: 0
   xVersatzProbability: 0
   yVersatzMax: 2
-  yVersatzMin: -2
+  yVersatzMin: -1
   yVersatzProbability: 2
 --- !u!114 &1492263864
 MonoBehaviour:
@@ -896,7 +896,7 @@ MonoBehaviour:
   targetXVersatzTwo: 0
   targetYVersatzTwo: 0
   changeSmoothness: 0.01
-  changeTolerance: 2
+  changeTolerance: 1
   targetTimeSpeedOne: 0.1
   targetTimeSpeedTwo: 0.1
 --- !u!114 &1492263865

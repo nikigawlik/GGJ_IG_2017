@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 114656653548293576}
   - component: {fileID: 114481943492290790}
   - component: {fileID: 50851144331703714}
+  - component: {fileID: 111181286038144152}
+  - component: {fileID: 95607522169149656}
   m_Layer: 0
   m_Name: Char
   m_TagString: Untagged
@@ -108,6 +110,37 @@ BoxCollider2D:
   m_Offset: {x: -0.43926996, y: 0.95175153}
   serializedVersion: 2
   m_Size: {x: 3.0814612, y: 2.6221461}
+--- !u!95 &95607522169149656
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727447358856480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111181286038144152
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727447358856480}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114481943492290790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -119,12 +152,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5b2af80b0922e45a5427512a13a228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineHolder: {fileID: 0}
+  jumpButton: 
   gravFactor: 0.009
   advSpeed: 0.004
   retrSpeed: 0
   airborneDrag: 0.0006
   jumpFactor: 0.4
+  constJump: 0
+  lineHolder: {fileID: 0}
 --- !u!114 &114553934413495574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+  cam: {fileID: 0}
 --- !u!212 &212773336872078138
 SpriteRenderer:
   m_ObjectHideFlags: 1
