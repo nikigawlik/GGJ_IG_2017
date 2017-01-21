@@ -6,6 +6,7 @@ public class WaveSurf : MonoBehaviour {
 
 	//public string jumpButton;
 
+	public float spriteYOffset;
 
 	public float gravFactor;
 	public float advSpeed;
@@ -33,8 +34,11 @@ public class WaveSurf : MonoBehaviour {
 
 	private bool airborne = false;
 
+	Animator anim;
+
 	// Use this for initialization
 	void Start () {
+		anim = GetComponent<Animator> ();
 		UpdateWaveComps ();
 
 		lineHolders = GameObject.FindGameObjectsWithTag ("Wave");
@@ -70,6 +74,8 @@ public class WaveSurf : MonoBehaviour {
 				   (oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt (veryOldPos.y)) && pos.y >= waveMot.GetYAt (pos.x)) {
 
 					airborne = false;
+					//print (this.gameObject.GetComponent<Animator> ().GetParameter (0));
+					anim.SetTrigger("land");
                     ParticleSystem VFX = this.gameObject.GetComponentInChildren<ParticleSystem>();
                     VFX.Play();
 					velocity.x -= retrSpeed;
@@ -99,7 +105,7 @@ public class WaveSurf : MonoBehaviour {
 		//------------------Y Movement
 		if (!isAirborne ()) {
 			velocity.y = 0;
-			pos.y = waveMot.GetYAt (pos.x);
+			pos.y = waveMot.GetYAt (pos.x) + spriteYOffset;
 		}
 		else {
 			velocity.y += getGravity ();

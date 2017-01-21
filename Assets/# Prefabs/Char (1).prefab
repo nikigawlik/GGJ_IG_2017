@@ -92,7 +92,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195627635605078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01, y: 1.97, z: 0}
+  m_LocalPosition: {x: 2.55, y: 0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4720647142603784}
@@ -132,7 +132,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1884475864434746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.65, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.22, y: 0.22, z: 0}
   m_Children:
   - {fileID: 4125824848221944}
@@ -171,9 +171,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.43926996, y: 0.95175153}
+  m_Offset: {x: 0.26, y: -0.41}
   serializedVersion: 2
-  m_Size: {x: 3.0814612, y: 2.6221461}
+  m_Size: {x: 3, y: 2.6221461}
 --- !u!95 &95881990284948842
 Animator:
   serializedVersion: 3
@@ -216,13 +216,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5b2af80b0922e45a5427512a13a228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpButton: Jump
+  spriteYOffset: 0.33
   gravFactor: 0.007
   advSpeed: 0.028
   retrSpeed: 0
   airborneDrag: 0.1
   jumpFactor: 0.1
   constJump: 0.15
+  gamepad: 3
+  keyboardJumpKey: space
+  keyboardShootKey: ctrl
   lineHolder: {fileID: 0}
 --- !u!114 &114559329891037194
 MonoBehaviour:
@@ -251,7 +254,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 1244671290671116, guid: e379fb98ad96f7041b476547954a7c57,
     type: 2}
   cam: {fileID: 0}
-  feuerButton: Fire1
+  keyboardShootKey: left ctrl
 --- !u!198 &198073248841165468
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -307,7 +310,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1911844169
+  randomSeed: -1544446335
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2902,7 +2905,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -347375758
+  randomSeed: 640522603
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5497,7 +5500,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 545466979
+  randomSeed: 2126809469
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8230,7 +8233,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2c7189e09885bc74295539d96962d02b, type: 3}
-  m_Color: {r: 0.03379107, g: 0.9191176, b: 0.36960462, a: 1}
+  m_Sprite: {fileID: 21300000, guid: a0b1dbe1086b0ae4d84ca27988250705, type: 3}
+  m_Color: {r: 1, g: 0.9852941, b: 0.397, a: 1}
   m_FlipX: 0
   m_FlipY: 0
