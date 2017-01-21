@@ -15,6 +15,7 @@ public class WavePointGenerator : MonoBehaviour {
 	//List of all HEIGHTS of all Wavepoints on screen
 	public List<float> pointList = new List<float>();
 	public int maxPoints;
+	public float slownessFactor = 1.0f;
 
 
 	//Wave One
@@ -69,7 +70,7 @@ public class WavePointGenerator : MonoBehaviour {
 		ownTimeTwo = 0.0f;
 		timeSpeedTwo = targetTimeSpeedTwo;
 
-		for (int x = 0; x < maxPoints; x++) {
+		for (int x = 0; x < (slownessFactor * maxPoints); x++) {
 			pointList.Add(0);
 		}
 	}
@@ -114,8 +115,8 @@ public class WavePointGenerator : MonoBehaviour {
 		ownTimeOne += timeSpeedOne;
 		ownTimeTwo += timeSpeedTwo;
 
-		float newHeight = amplitudeOne * Mathf.Sin ((float)(frequencyOne * ownTimeOne + xVersatzOne)) + yVersatzOne
-			+ 		amplitudeTwo * Mathf.Sin ((float)(frequencyTwo * ownTimeTwo + xVersatzTwo)) + yVersatzTwo;
+		float newHeight = amplitudeOne * Mathf.Sin ((float)((frequencyOne/slownessFactor) * ownTimeOne + xVersatzOne)) + yVersatzOne
+			+ 		amplitudeTwo * Mathf.Sin ((float)((frequencyTwo/slownessFactor) * ownTimeTwo + xVersatzTwo)) + yVersatzTwo;
 		
 		pointList.Add(newHeight);
 
