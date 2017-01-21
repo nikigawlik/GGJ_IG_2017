@@ -12,6 +12,7 @@ public class waveMotion : MonoBehaviour
 	private float speedhub = 0;
     public Color startColor;
     public Color endColor;
+    public bool endColor_gleich_StartColor;
 
 	float screenWidth;
 	public Camera cam;
@@ -24,7 +25,14 @@ public class waveMotion : MonoBehaviour
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
 		lineRenderer.numPositions = wavePointGen.maxPoints;
         lineRenderer.startColor = startColor;
-        lineRenderer.endColor = endColor;
+        if (endColor_gleich_StartColor)
+        {
+            lineRenderer.endColor = lineRenderer.startColor;
+        }
+        else
+        {
+            lineRenderer.endColor = endColor;
+        }
 
 		screenWidth = 2f * cam.orthographicSize * cam.aspect;
 		pointDistance = screenWidth / lineRenderer.numPositions;
