@@ -12,20 +12,22 @@ public class canShoot : MonoBehaviour {
 	private string shootButton;
 	public string keyboardShootKey = "left ctrl";
 
-	//Vector3 bulletSpeed;
-	// Use this for initialization
-	void Start () {
-		anim = GetComponentInParent<Animator> ();
-		WaveSurf surf = GetComponentInParent<WaveSurf> ();
+    private WaveSurf surf;
 
-		shootButton = "joystick " + surf.gamepad + " button 1";
-		Debug.Log (shootButton);
+    //Vector3 bulletSpeed;
+    // Use this for initialization
+    void Start () {
+		anim = GetComponentInParent<Animator> ();
+		 surf = GetComponentInParent<WaveSurf> ();
+
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		timer += Time.deltaTime;
+
+        shootButton = "joystick " + surf.GetGamePad() + " button 1"; // hacks :D
+        timer += Time.deltaTime;
 		if ((Input.GetKeyDown(shootButton) || Input.GetKeyDown(keyboardShootKey)) && timer > 1) {
 			//Rotation doesnt work for some reason *~*
 			anim.SetTrigger("shoot");

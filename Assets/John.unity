@@ -99,8 +99,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 324464016}
+  - component: {fileID: 324464017}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: joystickController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +120,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324464017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 324464015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b6a0dc4a0d8774b8e134c840b22f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 649234436}
+  - {fileID: 1975351847}
+  - {fileID: 1193924696}
+  - {fileID: 900001801}
+--- !u!1 &649234436 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940,
+    type: 2}
+  m_PrefabInternal: {fileID: 875454636}
 --- !u!1 &670147515
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,9 +406,19 @@ Prefab:
       propertyPath: spriteYOffset
       value: 0.35
       objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: gamepad
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &900001801 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940,
+    type: 2}
+  m_PrefabInternal: {fileID: 1480981419}
 --- !u!1001 &1163708713
 Prefab:
   m_ObjectHideFlags: 0
@@ -463,7 +495,7 @@ Prefab:
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
       propertyPath: gamepad
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -488,6 +520,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1193924696 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256950743}
 --- !u!1001 &1256950743
 Prefab:
   m_ObjectHideFlags: 0
@@ -564,7 +601,7 @@ Prefab:
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
       propertyPath: gamepad
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -862,7 +899,7 @@ Prefab:
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
       propertyPath: gamepad
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -1281,6 +1318,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1975351847 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940,
+    type: 2}
+  m_PrefabInternal: {fileID: 1163708713}
 --- !u!1 &2041119666
 GameObject:
   m_ObjectHideFlags: 0

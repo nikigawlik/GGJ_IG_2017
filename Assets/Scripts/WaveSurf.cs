@@ -18,15 +18,15 @@ public class WaveSurf : MonoBehaviour {
 	private Vector2 veryOldPos;
 	private Vector2 velocity;
 	private float targetRotation;
-
-	public int gamepad;
+    
 	public string keyboardJumpKey = "space";
 	public string keyboardShootKey = "ctrl";
 
 	private string jumpButton;
 
+    private int gamepadId = 11;
 
-	public GameObject lineHolder;
+    public GameObject lineHolder;
 	private GameObject[] lineHolders;
 
 	private WavePointGenerator wavePointGen;
@@ -45,10 +45,22 @@ public class WaveSurf : MonoBehaviour {
 
 		velocity = new Vector2 (advSpeed, 0);
 
-		jumpButton = "joystick " + gamepad + " " + "button 0";
-	}
+        jumpButton = "joystick " + gamepadId + " " + "button 0";
+    }
 
-	void UpdateWaveComps () {
+    public void SetGamepadId(int i)
+    {
+        this.gamepadId = i;
+        jumpButton = "joystick " + i + " " + "button 0";
+    }
+
+    public int GetGamePad()
+    {
+        return gamepadId;
+    }
+
+
+    void UpdateWaveComps () {
 		wavePointGen = lineHolder.GetComponent<WavePointGenerator> ();
 		waveMot = lineHolder.GetComponent<waveMotion> ();
 	}
