@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 728088818}
   m_Layer: 0
   m_Name: Line Holder (1)
-  m_TagString: Untagged
+  m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 1062020052}
   m_Layer: 0
   m_Name: Line Holder
-  m_TagString: Untagged
+  m_TagString: Wave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -652,6 +652,7 @@ MonoBehaviour:
   BulletPrefab: {fileID: 1244671290671116, guid: e379fb98ad96f7041b476547954a7c57,
     type: 2}
   cam: {fileID: 2041119670}
+  feuerButton: 
 --- !u!1 &2041119666
 GameObject:
   m_ObjectHideFlags: 0
