@@ -6,6 +6,8 @@ public class canShoot : MonoBehaviour {
 
 	public GameObject BulletPrefab;
 	public Camera cam;
+
+
 	//Vector3 bulletSpeed;
 	// Use this for initialization
 	void Start () {
