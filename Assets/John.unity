@@ -404,7 +404,17 @@ Prefab:
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
       propertyPath: spriteYOffset
-      value: 0.35
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: advSpeed
+      value: 0.045
       objectReference: {fileID: 0}
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -500,7 +510,7 @@ Prefab:
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
       propertyPath: spriteYOffset
-      value: 0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -516,6 +526,25 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: advSpeed
+      value: 0.045
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
@@ -606,7 +635,7 @@ Prefab:
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
       propertyPath: spriteYOffset
-      value: 0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -622,6 +651,25 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.21379304
+      objectReference: {fileID: 0}
+    - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: advSpeed
+      value: 0.045
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
@@ -904,7 +952,7 @@ Prefab:
     - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
       propertyPath: spriteYOffset
-      value: 0.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -920,6 +968,25 @@ Prefab:
         type: 2}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: advSpeed
+      value: 0.045
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}

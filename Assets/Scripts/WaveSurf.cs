@@ -6,6 +6,13 @@ public class WaveSurf : MonoBehaviour {
 
 	//public string jumpButton;
 
+
+
+	public AudioClip landSound;
+	public AudioClip jumpSound;
+	public AudioSource mySauce;
+
+
 	public float spriteYOffset;
 
 	public float gravFactor;
@@ -38,6 +45,9 @@ public class WaveSurf : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		mySauce = GetComponent<AudioSource> ();
+
 		anim = GetComponent<Animator> ();
 		UpdateWaveComps ();
 
@@ -69,7 +79,8 @@ public class WaveSurf : MonoBehaviour {
 		Vector2 pos = this.transform.position;
 		// jump
 		if ((Input.GetKeyDown(jumpButton) || Input.GetKeyDown(keyboardJumpKey)) && airborne == false) { 
-			
+			mySauce.clip = jumpSound;
+			mySauce.Play ();
 			airborne = true;
 			velocity = transform.rotation * (Vector2.right * jumpFactor);
 			//velocity = new Vector2(0f,0.01f);
@@ -88,6 +99,8 @@ public class WaveSurf : MonoBehaviour {
 					airborne = false;
 					//print (this.gameObject.GetComponent<Animator> ().GetParameter (0));
 					anim.SetTrigger("land");
+					mySauce.clip = landSound;
+					mySauce.Play ();
                     ParticleSystem VFX = this.gameObject.GetComponentInChildren<ParticleSystem>();
                     VFX.Play();
 					velocity.x -= retrSpeed;
@@ -152,8 +165,8 @@ public class WaveSurf : MonoBehaviour {
 	float getGravity() {
 		Vector2 pos = this.transform.position;
 
-		return Mathf.Sign(pos.y - waveMot.GetYAt(transform.position.x)) * gravFactor * -1f;
-		//return Mathf.Sign(pos.y) * gravFactor * -1f;
+		//return Mathf.Sign(pos.y - waveMot.GetYAt(transform.position.x)) * gravFactor * -1f;
+		return Mathf.Sign(pos.y) * gravFactor * -1f;
 		//return gravFactor * -1f;
 	}
 }

@@ -9,14 +9,19 @@ public class canShoot : MonoBehaviour {
 	float timer;
 	Animator anim;
 
+	public AudioClip[] shootSound = new AudioClip[3];
+	public AudioSource mySauce;
+
 	private string shootButton;
 	public string keyboardShootKey = "left ctrl";
-
+    
     private WaveSurf surf;
+    
+	//Vector3 bulletSpeed;
+	// Use this for initialization
+	void Start () {
+		mySauce = GetComponentInParent<AudioSource> ();
 
-    //Vector3 bulletSpeed;
-    // Use this for initialization
-    void Start () {
 		anim = GetComponentInParent<Animator> ();
 		 surf = GetComponentInParent<WaveSurf> ();
 
@@ -31,6 +36,8 @@ public class canShoot : MonoBehaviour {
 		if ((Input.GetKeyDown(shootButton) || Input.GetKeyDown(keyboardShootKey)) && timer > 1) {
 			//Rotation doesnt work for some reason *~*
 			anim.SetTrigger("shoot");
+			mySauce.clip = shootSound[Random.Range(1,3)];
+			mySauce.Play ();
 			GameObject bullet = Instantiate (BulletPrefab, this.transform.position, this.transform.rotation);
 			//Direction:
 			bullet.GetComponent<BulletController> ().speed = this.transform.rotation * Vector3.right;
