@@ -187,8 +187,9 @@ MonoBehaviour:
   gravFactor: 0.009
   advSpeed: 0.01
   retrSpeed: 0
-  airborneDrag: 0.0006
+  airborneDrag: 0.1
   jumpFactor: 0.4
+  constJump: 0
   lineHolder: {fileID: 0}
 --- !u!114 &114559329891037194
 MonoBehaviour:
