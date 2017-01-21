@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WaveSurf : MonoBehaviour {
 
+	public string jumpButton;
+
 	public float gravFactor;
 	public float advSpeed;
 	public float retrSpeed;
@@ -39,13 +41,13 @@ public class WaveSurf : MonoBehaviour {
 	void Update() {
 		Vector2 pos = this.transform.position;
 		// jump
-		if (Input.GetButtonDown ("Jump") && airborne == false) { 
+		if (Input.GetButtonDown (jumpButton) && airborne == false) { 
 			
 			airborne = true;
 			velocity = transform.rotation * (Vector2.right * jumpFactor);
 			//velocity.x = retrSpeed;
 			velocity.x = 0;
-		} else if (!Input.GetButton ("Jump") &&  airborne == true) {
+		} else if (!Input.GetButton (jumpButton) &&  airborne == true) {
 			foreach (GameObject wave in lineHolders) 
 			{
 				waveMot = wave.GetComponent<waveMotion> ();

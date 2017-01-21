@@ -21,6 +21,7 @@ public class BulletController : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D coll){
 		if (coll) {
 			Destroy (this.gameObject);
+			coll.gameObject.GetComponent<hasLives> ().getHit ();
 		}
 	}
 
