@@ -374,6 +374,21 @@ Prefab:
       propertyPath: m_Name
       value: Char (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: jumpButton
+      value: joystick 1 button 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: gamepad
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114744587707900936, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: keyboardShootKey
+      value: left ctrl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
   m_IsPrefabParent: 0
@@ -485,6 +500,16 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2041119670}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: gamepad
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114744587707900936, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: keyboardShootKey
+      value: left ctrl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
   m_IsPrefabParent: 0
@@ -596,6 +621,16 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 2041119670}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: gamepad
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114744587707900936, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: keyboardShootKey
+      value: left ctrl
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
   m_IsPrefabParent: 0
@@ -1292,6 +1327,16 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.9191176
+      objectReference: {fileID: 0}
+    - target: {fileID: 114035485147099176, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: gamepad
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114744587707900936, guid: 6b44e25589b294f41be20f1889965940,
+        type: 2}
+      propertyPath: keyboardShootKey
+      value: left ctrl
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b44e25589b294f41be20f1889965940, type: 2}
