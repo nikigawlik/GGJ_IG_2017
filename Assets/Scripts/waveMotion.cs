@@ -72,4 +72,8 @@ public class waveMotion : MonoBehaviour
 		return (wavePointGen.pointList.ElementAt(index2) - wavePointGen.pointList.ElementAt(index1)) / pointDistance;
 	}
 
+	public float getWaveSpeed() {
+		return pointDistance; // one point per frame
+	}
+
 }

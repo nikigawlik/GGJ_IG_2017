@@ -10,7 +10,7 @@ public class WaveSurf : MonoBehaviour {
 	public float retrSpeed;
 	public float airborneDrag;
 	public float jumpFactor;
-
+	private Vector2 oldPos;
 	private Vector2 velocity;
 
 
@@ -28,20 +28,22 @@ public class WaveSurf : MonoBehaviour {
 	}
 
 	void Update() {
-
+		Vector2 pos = this.transform.position;
 		// jump
-		if (Input.GetButtonDown("Jump")) { //TODO change this ;)
-			if (!airborne) {
-				airborne = true;
-				velocity = transform.rotation * (Vector2.right * jumpFactor);
-				//velocity.x = retrSpeed;
-				velocity.x = 0;
-			} else {
-				airborne = false; //TODO check for line proximity
-				velocity.x -= retrSpeed;
-			}
-		}
+		if (Input.GetButtonDown ("Jump") && airborne == false) { //TODO change this ;)
+			
+			airborne = true;
+			velocity = transform.rotation * (Vector2.right * jumpFactor);
+			//velocity.x = retrSpeed;
+			velocity.x = 0;
+		} else if (!Input.GetButton ("Jump") &&
+			(oldPos.y >= waveMot.GetYAt (pos.x) && pos.y <= waveMot.GetYAt (pos.x)  ||
+			 oldPos.y <= waveMot.GetYAt (pos.x) && pos.y >= waveMot.GetYAt (pos.x)  )
+			&& airborne == true) {
 
+			airborne = false; 
+			velocity.x -= retrSpeed;
+		}
 	}
 
 	void FixedUpdate () {
@@ -63,6 +65,7 @@ public class WaveSurf : MonoBehaviour {
 		else {
 			velocity.y += getGravity ();
 		}
+		oldPos = pos;
 		pos = pos + velocity;
 
 		this.transform.position = pos;
