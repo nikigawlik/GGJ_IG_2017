@@ -12,6 +12,7 @@ public class WaveSurf : MonoBehaviour {
 	public float jumpFactor;
 
 	private Vector2 velocity;
+	private float targetRotation;
 
 
 	private WavePointGenerator wavePointGen;
@@ -50,6 +51,7 @@ public class WaveSurf : MonoBehaviour {
 		if (isAirborne ()) {
 			// drag 
 			velocity.x -= airborneDrag;
+
 		} else {
 			velocity.x = advSpeed;
 		}
@@ -66,7 +68,19 @@ public class WaveSurf : MonoBehaviour {
 		pos = pos + velocity;
 
 		this.transform.position = pos;
-		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 180f / Mathf.PI * Mathf.Atan(waveMot.GetSlopeAt (pos.x))));
+
+		/*
+		 * rotation: 
+		 */
+		if (isAirborne ()) {
+			targetRotation = Mathf.Atan (velocity.y / waveMot.getWaveSpeed ());
+		}
+		else
+			targetRotation = Mathf.Atan (waveMot.GetSlopeAt (pos.x));
+		
+		float lerp = 0.1f;
+		Quaternion targetQ = Quaternion.Euler (new Vector3 (0, 0, 180f / Mathf.PI * targetRotation));
+		this.transform.rotation = targetQ;
 	}
 
 	bool isAirborne() {

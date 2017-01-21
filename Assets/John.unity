@@ -380,11 +380,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointList: []
   maxPoints: 100
-  targetAmplitudeOne: 2.25
+  targetAmplitudeOne: 1.51
   frequencyOne: 4.57
   targetXVersatzOne: 0
   targetYVersatzOne: 0
-  targetAmplitudeTwo: 4.22
+  targetAmplitudeTwo: 0.81
   frequencyTwo: 4.19
   targetXVersatzTwo: 0
   targetYVersatzTwo: 0
