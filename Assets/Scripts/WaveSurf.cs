@@ -11,6 +11,7 @@ public class WaveSurf : MonoBehaviour {
 	public float airborneDrag;
 	public float jumpFactor;
 	private Vector2 oldPos;
+	private Vector2 veryOldPos;
 	private Vector2 velocity;
 	private float targetRotation;
 
@@ -38,8 +39,8 @@ public class WaveSurf : MonoBehaviour {
 			//velocity.x = retrSpeed;
 			velocity.x = 0;
 		} else if (!Input.GetButton ("Jump") &&
-			(oldPos.y >= waveMot.GetYAt (oldPos.x) && pos.y <= waveMot.GetYAt (pos.x)  ||
-				oldPos.y <= waveMot.GetYAt (oldPos.x) && pos.y >= waveMot.GetYAt (pos.x)  )
+			(	( oldPos.y >= waveMot.GetYAt (oldPos.x) || veryOldPos.y >= waveMot.GetYAt(veryOldPos.y) ) && pos.y <= waveMot.GetYAt (pos.x)  ||
+				( oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt(veryOldPos.y) ) && pos.y >= waveMot.GetYAt (pos.x)  )
 			&& airborne == true) {
 
 			airborne = false; 
@@ -67,6 +68,7 @@ public class WaveSurf : MonoBehaviour {
 		else {
 			velocity.y += getGravity ();
 		}
+		veryOldPos = oldPos;
 		oldPos = pos;
 		pos = pos + velocity;
 
