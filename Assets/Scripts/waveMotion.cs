@@ -12,7 +12,8 @@ public class waveMotion : MonoBehaviour
 	private float speedhub = 0;
     public Color startColor;
     public Color endColor;
-    public bool endColor_gleich_StartColor;
+    [Tooltip("EndColor = StartColor")]
+    public bool verlaufAus;
 
 	float screenWidth;
 	public Camera cam;
@@ -25,7 +26,7 @@ public class waveMotion : MonoBehaviour
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
 		lineRenderer.numPositions = wavePointGen.maxPoints;
         lineRenderer.startColor = startColor;
-        if (endColor_gleich_StartColor)
+        if (verlaufAus)
         {
             lineRenderer.endColor = lineRenderer.startColor;
         }
