@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WaveSurf : MonoBehaviour {
 
-	public GameObject lineHolder;
 	public float gravFactor;
 	public float advSpeed;
 	public float retrSpeed;
@@ -15,6 +14,8 @@ public class WaveSurf : MonoBehaviour {
 	private Vector2 velocity;
 	private float targetRotation;
 
+	public GameObject lineHolder;
+	private GameObject[] lineHolders;
 
 	private WavePointGenerator wavePointGen;
 	private waveMotion waveMot;
@@ -23,10 +24,16 @@ public class WaveSurf : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		wavePointGen = lineHolder.GetComponent<WavePointGenerator> ();
-		waveMot = lineHolder.GetComponent<waveMotion> ();
+		UpdateWaveComps ();
+
+		lineHolders = GameObject.FindGameObjectsWithTag ("Wave");
 
 		velocity = new Vector2 (advSpeed, 0);
+	}
+
+	void UpdateWaveComps () {
+		wavePointGen = lineHolder.GetComponent<WavePointGenerator> ();
+		waveMot = lineHolder.GetComponent<waveMotion> ();
 	}
 
 	void Update() {
@@ -38,13 +45,19 @@ public class WaveSurf : MonoBehaviour {
 			velocity = transform.rotation * (Vector2.right * jumpFactor);
 			//velocity.x = retrSpeed;
 			velocity.x = 0;
-		} else if (!Input.GetButton ("Jump") &&
-			(	( oldPos.y >= waveMot.GetYAt (oldPos.x) || veryOldPos.y >= waveMot.GetYAt(veryOldPos.y) ) && pos.y <= waveMot.GetYAt (pos.x)  ||
-				( oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt(veryOldPos.y) ) && pos.y >= waveMot.GetYAt (pos.x)  )
-			&& airborne == true) {
-
-			airborne = false; 
-			velocity.x -= retrSpeed;
+		} else if (!Input.GetButton ("Jump") &&  airborne == true) {
+			foreach (GameObject wave in lineHolders) 
+			{
+				waveMot = wave.GetComponent<waveMotion> ();
+				if ((oldPos.y >= waveMot.GetYAt (oldPos.x) || veryOldPos.y >= waveMot.GetYAt (veryOldPos.y)) && pos.y <= waveMot.GetYAt (pos.x) ||
+				   (oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt (veryOldPos.y)) && pos.y >= waveMot.GetYAt (pos.x)) {
+					airborne = false; 
+					velocity.x -= retrSpeed;
+					// set this curve
+					lineHolder = wave;
+					break;
+				}
+			}
 		}
 	}
 

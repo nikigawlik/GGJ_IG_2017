@@ -217,12 +217,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5b2af80b0922e45a5427512a13a228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lineHolder: {fileID: 1062020047}
   gravFactor: 0.009
   advSpeed: 0.004
   retrSpeed: 0
   airborneDrag: 0.0006
   jumpFactor: 0.4
+  lineHolder: {fileID: 1062020047}
 --- !u!1 &728088817
 GameObject:
   m_ObjectHideFlags: 0
