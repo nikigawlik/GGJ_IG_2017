@@ -21,6 +21,14 @@ public class WaveController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		wavePointGen = GetComponent<WavePointGenerator> ();
+		changeParam (ref wavePointGen.targetAmplitudeOne, ref amplitudeMax, ref amplitudeMin);
+		changeParam (ref wavePointGen.targetAmplitudeTwo, ref amplitudeMax, ref amplitudeMin);
+		changeParam (ref wavePointGen.targetTimeSpeedOne, ref timeSpeedMax, ref timeSpeedMin);
+		changeParam (ref wavePointGen.targetTimeSpeedTwo, ref timeSpeedMax, ref timeSpeedMin);
+		changeParam (ref wavePointGen.targetXVersatzOne, ref xVersatzMax, ref xVersatzMin);
+		changeParam (ref wavePointGen.targetXVersatzTwo, ref xVersatzMax, ref xVersatzMin);
+		changeParam (ref wavePointGen.targetYVersatzOne, ref yVersatzMax, ref yVersatzMin);
+		changeParam (ref wavePointGen.targetYVersatzTwo, ref yVersatzMax, ref yVersatzMin);
 	}
 
 	void changeParam(ref float param, ref float max, ref float min){
