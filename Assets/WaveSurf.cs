@@ -6,8 +6,12 @@ public class WaveSurf : MonoBehaviour {
 
 	public GameObject lineHolder;
 	public float gravFactor;
+	public float advSpeed;
+	public float retrSpeed;
+	public float airborneDrag;
+	public float jumpFactor;
 
-	private Vector2 velocity = new Vector2 (0, 0);
+	private Vector2 velocity;
 
 
 	private WavePointGenerator wavePointGen;
@@ -15,42 +19,52 @@ public class WaveSurf : MonoBehaviour {
 
 	private bool airborne = false;
 
-	private Vector2 prevPos;
-
 	// Use this for initialization
 	void Start () {
 		wavePointGen = lineHolder.GetComponent<WavePointGenerator> ();
 		waveMot = lineHolder.GetComponent<waveMotion> ();
 
-		prevPos = transform.position;
+		velocity = new Vector2 (advSpeed, 0);
 	}
 
-	void FixedUpdate () {
-		Vector2 pos = this.transform.position;
-
+	void Update() {
 
 		// jump
 		if (Input.GetKeyDown ("space")) { //TODO change this ;)
 			if (!airborne) {
 				airborne = true;
-				float deltaV = transform.position.y - prevPos.y;
-				velocity.y = deltaV;
+				velocity = transform.rotation * (Vector2.right * jumpFactor);
+				//velocity.x = retrSpeed;
+				velocity.x = 0;
 			} else {
 				airborne = false; //TODO check for line proximity
+				velocity.x -= retrSpeed;
 			}
 		}
 
+	}
+
+	void FixedUpdate () {
+		Vector2 pos = this.transform.position;
+
+		if (isAirborne ()) {
+			// drag 
+			velocity.x -= airborneDrag;
+		} else {
+			velocity.x = advSpeed;
+		}
+
+
 		//snap
 		if (!isAirborne ()) {
-
+			velocity.y = 0;
 			pos.y = waveMot.GetYAt (pos.x);
 		}
 		else {
 			velocity.y += getGravity ();
-			pos = pos + velocity;
 		}
+		pos = pos + velocity;
 
-		prevPos = transform.position;
 		this.transform.position = pos;
 		this.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 180f / Mathf.PI * Mathf.Atan(waveMot.GetSlopeAt (pos.x))));
 	}
@@ -62,6 +76,6 @@ public class WaveSurf : MonoBehaviour {
 	float getGravity() {
 		Vector2 pos = this.transform.position;
 
-		return pos.y * gravFactor * -1f;
+		return Mathf.Sign(pos.y) * gravFactor * -1f;
 	}
 }
