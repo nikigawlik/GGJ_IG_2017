@@ -53,7 +53,9 @@ public class WaveSurf : MonoBehaviour {
 				waveMot = wave.GetComponent<waveMotion> ();
 				if ((oldPos.y >= waveMot.GetYAt (oldPos.x) || veryOldPos.y >= waveMot.GetYAt (veryOldPos.y)) && pos.y <= waveMot.GetYAt (pos.x) ||
 				   (oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt (veryOldPos.y)) && pos.y >= waveMot.GetYAt (pos.x)) {
-					airborne = false; 
+					airborne = false;
+                    ParticleSystem VFX = this.gameObject.GetComponentInChildren<ParticleSystem>();
+                    VFX.Play();
 					velocity.x -= retrSpeed;
 					// set this curve
 					lineHolder = wave;
