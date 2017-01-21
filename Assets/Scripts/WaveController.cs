@@ -6,7 +6,7 @@ public class WaveController : MonoBehaviour {
 
 	public float amplitudeMax;
 	public float amplitudeMin;
-	public float amplitudeProbability;
+	public float amplitudeProbability; //Wahrscheinlichkeit in prozent, dass der Wert in einem Update geändert wird
 	public float timeSpeedMax;
 	public float timeSpeedMin;
 	public float timeSpeedProbability;
