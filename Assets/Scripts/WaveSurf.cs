@@ -6,6 +6,7 @@ public class WaveSurf : MonoBehaviour {
 
 	public string jumpButton;
 
+
 	public float gravFactor;
 	public float advSpeed;
 	public float retrSpeed;
@@ -27,6 +28,8 @@ public class WaveSurf : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
+
 		UpdateWaveComps ();
 
 		lineHolders = GameObject.FindGameObjectsWithTag ("Wave");
@@ -50,13 +53,18 @@ public class WaveSurf : MonoBehaviour {
 			velocity.y += Mathf.Sign (velocity.y) * constJump;
 			//velocity.x = retrSpeed;
 			velocity.x = 0;
+
+			//LAND
 		} else if (!Input.GetButton (jumpButton) &&  airborne == true) {
 			foreach (GameObject wave in lineHolders) 
 			{
 				waveMot = wave.GetComponent<waveMotion> ();
 				if ((oldPos.y >= waveMot.GetYAt (oldPos.x) || veryOldPos.y >= waveMot.GetYAt (veryOldPos.y)) && pos.y <= waveMot.GetYAt (pos.x) ||
 				   (oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt (veryOldPos.y)) && pos.y >= waveMot.GetYAt (pos.x)) {
-					airborne = false; 
+
+					airborne = false;
+                    ParticleSystem VFX = this.gameObject.GetComponentInChildren<ParticleSystem>();
+                    VFX.Play();
 					velocity.x -= retrSpeed;
 					// set this curve
 					lineHolder = wave;
@@ -69,16 +77,19 @@ public class WaveSurf : MonoBehaviour {
 	void FixedUpdate () {
 		Vector2 pos = this.transform.position;
 
+		//-------------------X Movement
 		if (isAirborne ()) {
 			// drag 
-			velocity.x -= airborneDrag;
+			velocity.x = -(airborneDrag * ((pos.x + 10)/20));
+
+			//Explaination? See below!
 
 		} else {
-			velocity.x = advSpeed;
+			//Screen X coordinates range from -10 to 10 
+			//velocity should be 1*advSpeed on the very left and 0*advSpeed on the far right
+			velocity.x = advSpeed * (1-(pos.x + 10)/20);
 		}
-
-
-		//snap
+		//------------------Y Movement
 		if (!isAirborne ()) {
 			velocity.y = 0;
 			pos.y = waveMot.GetYAt (pos.x);
@@ -86,6 +97,9 @@ public class WaveSurf : MonoBehaviour {
 		else {
 			velocity.y += getGravity ();
 		}
+
+
+		//For Landing
 		veryOldPos = oldPos;
 		oldPos = pos;
 		pos = pos + velocity;
