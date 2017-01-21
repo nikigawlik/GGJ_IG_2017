@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class waveMotion : MonoBehaviour
 {
@@ -43,6 +44,32 @@ public class waveMotion : MonoBehaviour
 		//Debug.Log (i);
         
 
-    }
+	}
+
+
+	public float GetYAt(float x) {
+		float screenX = Math.Min (Math.Max (x + screenWidth/2, 0), screenWidth);
+		int index1 = (int)Math.Floor (screenX / pointDistance);
+		//float index2 = Math.Ceil (screenWidth / wavePointGen.maxPoints);
+		//float delta = x - index1; TODO interpol
+
+		index1 = Math.Min (Math.Max (index1, 0), wavePointGen.maxPoints - 1);
+
+		return wavePointGen.pointList.ElementAt(index1);
+	}
+
+
+	public float GetSlopeAt(float x) {
+		float screenX = Math.Min (Math.Max (x + screenWidth/2, 0), screenWidth);
+		int index1 = (int)Math.Floor (screenX / pointDistance) - 1;
+		int index2 = index1 + 2;
+		//float index2 = Math.Ceil (screenWidth / wavePointGen.maxPoints);
+		//float delta = x - index1; TODO interpol
+
+		index1 = Math.Min (Math.Max (index1, 0), wavePointGen.maxPoints - 1);
+		index2 = Math.Min (Math.Max (index2, 0), wavePointGen.maxPoints - 1);
+
+		return (wavePointGen.pointList.ElementAt(index2) - wavePointGen.pointList.ElementAt(index1)) / pointDistance;
+	}
 
 }
