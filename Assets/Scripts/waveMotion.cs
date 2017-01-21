@@ -6,10 +6,12 @@ using System;
 
 public class waveMotion : MonoBehaviour
 {
-    public float amplitude = 1;
+    public float amplitude = 1; 
     public float speed;
     public float pointDistance;
 	private float speedhub = 0;
+    public Color startColor;
+    public Color endColor;
 
 	float screenWidth;
 	public Camera cam;
@@ -21,6 +23,8 @@ public class waveMotion : MonoBehaviour
 		wavePointGen = GetComponent<WavePointGenerator> ();
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
 		lineRenderer.numPositions = wavePointGen.maxPoints;
+        lineRenderer.startColor = startColor;
+        lineRenderer.endColor = endColor;
 
 		screenWidth = 2f * cam.orthographicSize * cam.aspect;
 		pointDistance = screenWidth / lineRenderer.numPositions;
