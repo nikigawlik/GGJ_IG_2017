@@ -152,14 +152,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 214866941}
-  m_LocalRotation: {x: -0.0065871556, y: -0, z: -0, w: 0.9999783}
-  m_LocalPosition: {x: 0, y: -0.08, z: -0.0000000066047}
-  m_LocalScale: {x: 0.36595818, y: 0.36595818, z: 2481.4358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 0}
   m_Children:
   - {fileID: 1169506497}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -0.75500005, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &214866944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   gravFactor: 0.009
   advSpeed: 0.004
   retrSpeed: 0
-  airborneDrag: 0.0001
+  airborneDrag: 0.0006
   jumpFactor: 0.4
 --- !u!1 &1062020047
 GameObject:
@@ -485,7 +485,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.04995674, g: 0.0934376, b: 0.16176468, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -539,7 +539,7 @@ MonoBehaviour:
   hdr: 0
   sepBlurSpread: 6.5
   quality: 1
-  bloomIntensity: 9
+  bloomIntensity: 6
   bloomThreshold: 0.6
   bloomThresholdColor: {r: 1, g: 1, b: 1, a: 1}
   bloomBlurIterations: 4

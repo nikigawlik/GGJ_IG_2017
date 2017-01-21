@@ -30,7 +30,7 @@ public class BulletController : MonoBehaviour {
 			|| 	this.transform.position.x <= -screenWidth / 2 
 			||	this.transform.position.y <= -screenHeight / 2) {
 
-			Destroy (this.gameObject, 1f);
+			Destroy (this.gameObject, 2f);
 		}
 	}
 
