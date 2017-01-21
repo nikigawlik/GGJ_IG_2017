@@ -97,8 +97,8 @@ public class WavePointGenerator : MonoBehaviour {
 		frequencyTwo = Mathf.Abs (frequencyTwo);
 		targetXVersatzOne = Mathf.Abs (targetXVersatzOne);
 		targetXVersatzTwo = Mathf.Abs (targetXVersatzTwo);
-		targetYVersatzOne = Mathf.Abs (targetYVersatzOne);
-		targetYVersatzTwo = Mathf.Abs (targetYVersatzTwo);
+		//targetYVersatzOne = Mathf.Abs (targetYVersatzOne);
+		//targetYVersatzTwo = Mathf.Abs (targetYVersatzTwo);
 		targetTimeSpeedOne = Mathf.Abs (targetTimeSpeedOne);
 		targetTimeSpeedTwo = Mathf.Abs (targetTimeSpeedTwo);
 		//change amplitude gradually 

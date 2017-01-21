@@ -11,6 +11,7 @@ public class WaveSurf : MonoBehaviour {
 	public float retrSpeed;
 	public float airborneDrag;
 	public float jumpFactor;
+	public float constJump;
 	private Vector2 oldPos;
 	private Vector2 veryOldPos;
 	private Vector2 velocity;
@@ -45,6 +46,8 @@ public class WaveSurf : MonoBehaviour {
 			
 			airborne = true;
 			velocity = transform.rotation * (Vector2.right * jumpFactor);
+			//velocity = new Vector2(0f,0.01f);
+			velocity.y += Mathf.Sign (velocity.y) * constJump;
 			//velocity.x = retrSpeed;
 			velocity.x = 0;
 		} else if (!Input.GetButton (jumpButton) &&  airborne == true) {
@@ -111,5 +114,7 @@ public class WaveSurf : MonoBehaviour {
 		Vector2 pos = this.transform.position;
 
 		return Mathf.Sign(pos.y - waveMot.GetYAt(transform.position.x)) * gravFactor * -1f;
+		//return Mathf.Sign(pos.y) * gravFactor * -1f;
+		//return gravFactor * -1f;
 	}
 }

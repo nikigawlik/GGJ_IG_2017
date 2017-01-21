@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1393158826429052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.65, y: 0, z: 0}
-  m_LocalScale: {x: 0.22, y: 0.22, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children:
   - {fileID: 4304766525721142}
   m_Father: {fileID: 0}
@@ -138,6 +138,7 @@ MonoBehaviour:
   retrSpeed: 0
   airborneDrag: 0.0006
   jumpFactor: 0.4
+  constJump: 0
   lineHolder: {fileID: 0}
 --- !u!114 &114650493438773016
 MonoBehaviour:
