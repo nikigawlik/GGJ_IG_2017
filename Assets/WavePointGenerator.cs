@@ -32,18 +32,11 @@ public class WavePointGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//		newHeight = 0;
-//		//Wave One
-//		frequencyOne = 1;
-//		amplitudeOne = 1;
-//		xVersatzOne = 0;
-//		yVersatzOne = 0;
-//		//Wave Two
-//		amplitudeTwo = 0;
-//		frequencyTwo = 0;
-//		xVersatzTwo = 0;
-//		yVersatzTwo = 0;
+	
 
+		for (int x = 0; x < maxPoints; x++) {
+			pointList.Add(0);
+		}
 	}
 	
 
@@ -60,10 +53,11 @@ public class WavePointGenerator : MonoBehaviour {
 			+ 		amplitudeTwo * Mathf.Sin ((float)(frequencyTwo * Time.time + xVersatzTwo)) + yVersatzTwo;
 		
 		pointList.Add(newHeight);
-		if (pointList.Count >= maxPoints){
-			pointList.Remove (0);
 
-		}
+
+		pointList.RemoveAt (0);
+
+
 
 
 	}
