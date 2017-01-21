@@ -7,6 +7,7 @@ public class canShoot : MonoBehaviour {
 	public GameObject BulletPrefab;
 	public Camera cam;
 
+	public string feuerButton;
 
 	//Vector3 bulletSpeed;
 	// Use this for initialization
@@ -17,7 +18,7 @@ public class canShoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Fire1")) {
+		if (Input.GetButtonDown(feuerButton)) {
 			//Rotation doesnt work for some reason *~*
 			GameObject bullet = Instantiate (BulletPrefab, this.transform.position, this.transform.rotation);
 			//Direction:
