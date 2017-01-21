@@ -30,7 +30,7 @@ public class WaveSurf : MonoBehaviour {
 	void Update() {
 
 		// jump
-		if (Input.GetKeyDown ("space")) { //TODO change this ;)
+		if (Input.GetButtonDown("Jump")) { //TODO change this ;)
 			if (!airborne) {
 				airborne = true;
 				velocity = transform.rotation * (Vector2.right * jumpFactor);

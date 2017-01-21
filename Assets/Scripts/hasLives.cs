@@ -8,7 +8,10 @@ public class hasLives : MonoBehaviour {
 
 	void die(){
 		//respawn
-		this.transform.position.x = 0;
+		// fixed this -Nils ;)
+		Vector2 pos = transform.position;
+		pos.x = 0;
+		transform.position = pos;
 	}
 
 	void getHit(){

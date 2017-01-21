@@ -15,7 +15,7 @@ public class canShoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetButtonDown("Fire1")) {
 			//Rotation doesnt work for some reason *~*
 			GameObject bullet = Instantiate (BulletPrefab, this.transform.position, this.transform.rotation);
 			//Direction:
