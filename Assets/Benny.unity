@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+  cam: {fileID: 0}
 --- !u!50 &214866945
 Rigidbody2D:
   serializedVersion: 4
@@ -217,6 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5b2af80b0922e45a5427512a13a228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpButton: 
   gravFactor: 0.009
   advSpeed: 0.004
   retrSpeed: 0
@@ -278,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointList: []
   maxPoints: 100
+  slownessFactor: 3
   targetAmplitudeOne: 1
   frequencyOne: 1
   targetXVersatzOne: 0
@@ -306,7 +309,7 @@ MonoBehaviour:
   pointDistance: 0
   startColor: {r: 1, g: 0.5735294, b: 0.9529412, a: 1}
   endColor: {r: 0.39721677, g: 0.060012974, b: 0.5441177, a: 1}
-  endColor_gleich_StartColor: 0
+  verlaufAus: 0
   cam: {fileID: 2041119670}
 --- !u!120 &728088821
 LineRenderer:
@@ -454,7 +457,7 @@ MonoBehaviour:
   pointDistance: 0
   startColor: {r: 0.2352941, g: 1, b: 0.36713997, a: 1}
   endColor: {r: 0.29411763, g: 0.8247464, b: 1, a: 1}
-  endColor_gleich_StartColor: 0
+  verlaufAus: 0
   cam: {fileID: 2041119670}
 --- !u!120 &1062020049
 LineRenderer:
@@ -580,6 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointList: []
   maxPoints: 100
+  slownessFactor: 3
   targetAmplitudeOne: 1
   frequencyOne: 1
   targetXVersatzOne: 0
