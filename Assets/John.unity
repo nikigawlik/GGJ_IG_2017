@@ -218,11 +218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineHolder: {fileID: 1062020047}
-  gravFactor: 0.02
-  advSpeed: 0.04
+  gravFactor: 0.09
+  advSpeed: 0.004
   retrSpeed: 0
   airborneDrag: 0.005
-  jumpFactor: 0.5
+  jumpFactor: 0.4
 --- !u!1 &1062020047
 GameObject:
   m_ObjectHideFlags: 0

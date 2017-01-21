@@ -81,7 +81,7 @@ public class WaveSurf : MonoBehaviour {
 		else
 			targetRotation = Mathf.Atan (waveMot.GetSlopeAt (pos.x));
 		
-		float lerp = 0.1f;
+		//float lerp = 0.1f;
 		Quaternion targetQ = Quaternion.Euler (new Vector3 (0, 0, 180f / Mathf.PI * targetRotation));
 		this.transform.rotation = targetQ;
 	}
@@ -93,6 +93,6 @@ public class WaveSurf : MonoBehaviour {
 	float getGravity() {
 		Vector2 pos = this.transform.position;
 
-		return Mathf.Sign(pos.y) * gravFactor * -1f;
+		return Mathf.Sign(pos.y - waveMot.GetYAt(transform.position.x)) * gravFactor * -1f;
 	}
 }
