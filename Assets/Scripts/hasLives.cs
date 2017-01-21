@@ -7,6 +7,12 @@ public class hasLives : MonoBehaviour {
 	public int lives;
 	public Camera cam;
 
+	public AudioSource mySauce;
+	public AudioClip getHitSound;
+	void Start(){
+		mySauce = GetComponent<AudioSource> ();
+	}
+
 	void die(){
 		//respawn
 		// fixed this -Nils ;)
@@ -15,6 +21,9 @@ public class hasLives : MonoBehaviour {
 		transform.position = pos;
 	}
 	public void getHit(){
+		mySauce.clip = getHitSound;
+		mySauce.Play ();
+
 		lives--;
 		if (lives <= 0) {
 			die ();
