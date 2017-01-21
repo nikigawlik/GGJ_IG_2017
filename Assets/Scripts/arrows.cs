@@ -16,13 +16,10 @@ public class arrows : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		screenPos = cam.WorldToViewportPoint(transform.position);
+		//dreieck;
 		dreieck.SetActive (screenPos.y > 1 || screenPos.y < 0);
-//		if (screenPos.y > 1 || screenPos.y < 0) {
-//			dreieck.SetActive (true);
-//		} else {
-//			dreieck.SetActive (false);
-//		}
+
 	}
 }

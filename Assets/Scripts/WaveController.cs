@@ -36,7 +36,7 @@ public class WaveController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if ( ( Random.value * 100) > (100 - amplitudeProbability) ) {
 			changeParam (ref wavePointGen.targetAmplitudeOne, ref amplitudeMax, ref amplitudeMin);
 		}
