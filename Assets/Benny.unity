@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 1062020049}
   - component: {fileID: 1062020048}
   - component: {fileID: 1062020051}
+  - component: {fileID: 1062020052}
   m_Layer: 0
   m_Name: Line Holder
   m_TagString: Untagged
@@ -260,6 +261,25 @@ MonoBehaviour:
   changeTolerance: 2
   targetTimeSpeedOne: 0.1
   targetTimeSpeedTwo: 0.1
+--- !u!114 &1062020052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062020047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5e2840259138b49a73c74b32f898c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitudeRange: 2
+  amplitudeChangeProbability: 20
+  timeSpeedRange: 1
+  timeSpeedChangeProbability: 20
+  xVersatzRange: 20
+  xVersatzChangeProbability: 10
+  yVersatzRange: 0
+  yVersatzChangeProbability: 0
 --- !u!1 &2041119666
 GameObject:
   m_ObjectHideFlags: 0

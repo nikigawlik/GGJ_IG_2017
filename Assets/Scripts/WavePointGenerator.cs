@@ -75,11 +75,14 @@ public class WavePointGenerator : MonoBehaviour {
 	}
 	
 	void setSmoothValue(ref float current, ref float last, ref float target){
-		if (Mathf.Abs (current - target) <= (changeTolerance * changeSmoothness) *( Mathf.Abs( last - target ) ) ) {
+		if (Mathf.Abs (current - target) <= (changeTolerance * changeSmoothness) * (Mathf.Abs (last - target))) {
 			if (current != target) {
 				current = target;
 			}
 			last = current;
+		}
+		else if (Mathf.Abs (current - target) > Mathf.Abs (last - target)) {
+			current += 2 * changeSmoothness * (target - current);
 		}
 		else{
 			current += changeSmoothness*(target - last);
