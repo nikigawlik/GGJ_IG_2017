@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveSurf : MonoBehaviour {
 
-	public string jumpButton;
+	//public string jumpButton;
 
 
 	public float gravFactor;
@@ -18,6 +18,13 @@ public class WaveSurf : MonoBehaviour {
 	private Vector2 velocity;
 	private float targetRotation;
 
+	public int gamepad;
+	public string keyboardJumpKey = "space";
+	public string keyboardShootKey = "ctrl";
+
+	private string jumpButton;
+
+
 	public GameObject lineHolder;
 	private GameObject[] lineHolders;
 
@@ -28,13 +35,13 @@ public class WaveSurf : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-
 		UpdateWaveComps ();
 
 		lineHolders = GameObject.FindGameObjectsWithTag ("Wave");
 
 		velocity = new Vector2 (advSpeed, 0);
+
+		jumpButton = "joystick " + gamepad + " " + "button 0";
 	}
 
 	void UpdateWaveComps () {
@@ -45,7 +52,7 @@ public class WaveSurf : MonoBehaviour {
 	void Update() {
 		Vector2 pos = this.transform.position;
 		// jump
-		if (Input.GetButtonDown (jumpButton) && airborne == false) { 
+		if ((Input.GetKeyDown(jumpButton) || Input.GetKeyDown(keyboardJumpKey)) && airborne == false) { 
 			
 			airborne = true;
 			velocity = transform.rotation * (Vector2.right * jumpFactor);
@@ -55,7 +62,7 @@ public class WaveSurf : MonoBehaviour {
 			velocity.x = 0;
 
 			//LAND
-		} else if (!Input.GetButton (jumpButton) &&  airborne == true) {
+		} else if (!(Input.GetKey(jumpButton) || Input.GetKey(keyboardJumpKey)) &&  airborne == true) {
 			foreach (GameObject wave in lineHolders) 
 			{
 				waveMot = wave.GetComponent<waveMotion> ();

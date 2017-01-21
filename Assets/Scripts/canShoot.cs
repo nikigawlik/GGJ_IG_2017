@@ -8,19 +8,23 @@ public class canShoot : MonoBehaviour {
 	public Camera cam;
 	float timer;
 
-	public string feuerButton;
+	private string shootButton;
+	public string keyboardShootKey = "left ctrl";
 
 	//Vector3 bulletSpeed;
 	// Use this for initialization
 	void Start () {
-		
+		WaveSurf surf = GetComponentInParent<WaveSurf> ();
+
+		shootButton = "joystick " + surf.gamepad + " button 1";
+		Debug.Log (shootButton);
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if (Input.GetButtonDown(feuerButton) && timer > 1) {
+		if ((Input.GetKeyDown(shootButton) || Input.GetKeyDown(keyboardShootKey)) && timer > 1) {
 			//Rotation doesnt work for some reason *~*
 			GameObject bullet = Instantiate (BulletPrefab, this.transform.position, this.transform.rotation);
 			//Direction:
