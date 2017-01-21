@@ -24,7 +24,7 @@ public class arrows : MonoBehaviour {
 	void FixedUpdate () {
 		screenPos = cam.WorldToViewportPoint(character.transform.position);
 		if(screenPos.y>1.0f){
-			Debug.Log ("yay");
+//			Debug.Log ("yay");
 			gameObject.GetComponent<SpriteRenderer> ().flipY = true;
 			transform.position = new Vector3 (character.transform.position.x,cam.orthographicSize-objectSize, 2.0f);
 			renderer.enabled = true;
