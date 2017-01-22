@@ -22,6 +22,8 @@ public class arrows : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if (character == null)
+			return;
 		screenPos = cam.WorldToViewportPoint(character.transform.position);
 		if(screenPos.y>1.0f){
 //			Debug.Log ("yay");

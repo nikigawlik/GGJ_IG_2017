@@ -12,6 +12,5 @@ public class hasPoints : MonoBehaviour {
 
 	public void increasePoints(){
 		points++;
-		Debug.Log ("psasdfodi");
 	}
 }

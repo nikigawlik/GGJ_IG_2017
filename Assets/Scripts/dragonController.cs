@@ -50,14 +50,13 @@ public class dragonController : MonoBehaviour {
 
 					if (Vector3.Distance (coins [counter].transform.position, firstPlayer.transform.position) <= .5) {
 						Destroy (coins [counter]);
-						Debug.Log ("hihihihihi");
 						firstPlayer.GetComponent<hasPoints> ().increasePoints ();
 					}
+
 					coins [counter].gameObject.GetComponent<MeshRenderer> ().material.color = firstPlayer.GetComponent<SpriteRenderer> ().color;
 				}
 			}
 		}
-
 	}
 
 
