@@ -14,6 +14,8 @@ public class ScoreTrail : MonoBehaviour {
 	private const int maxScore = 200;
 	private Color playerColor;
 
+	public Vector2 deltaPos;
+
 	// Use this for initialization
 	void Start () {
 		lineRend = GetComponent<LineRenderer> ();
@@ -33,7 +35,9 @@ public class ScoreTrail : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		pointList.Add (transform.position);
+		Vector2 newPos = transform.position;
+		newPos.Set (newPos.x + deltaPos.x, newPos.y + deltaPos.y);
+		pointList.Add (newPos);
 
 		pointList.RemoveAt (0);
 

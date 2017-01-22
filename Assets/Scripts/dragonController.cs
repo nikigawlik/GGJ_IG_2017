@@ -11,6 +11,7 @@ public class dragonController : MonoBehaviour {
 
 	public GameObject[] players = new GameObject[4];
 	private GameObject firstPlayer;
+	
 
 	public GameObject coinPrefab;
 
@@ -39,9 +40,14 @@ public class dragonController : MonoBehaviour {
 	void Update (){
 		//Determine player most right
 		for (int x = 0; x < 4; x++) {
-			if (firstPlayer.transform.position.x <= players [x].transform.position.x) {
-				firstPlayer = players [x];
+			if (players [x] == null) {
+				continue;
 			}
+				 
+			if (firstPlayer.transform.position.x <= players [x].transform.position.x) {
+					firstPlayer = players [x];
+			}
+
 
 //			Debug.Log (firstPlayer);
 			for (int counter = 0; counter < coins.Length; counter++) {
@@ -102,5 +108,11 @@ public class dragonController : MonoBehaviour {
 		//Head Movement
 		thor1.transform.position = new Vector2(thor1.transform.position.x , (float) (0.5 * Mathf.Sin ((float)(1 * Time.time)) + 3.5 ));
 		thor2.transform.position = new Vector2(thor1.transform.position.x , (float) (-0.5 * Mathf.Cos ((float)(1 * Time.time)) - 3.5 ));
+	}
+
+
+	public GameObject GetFirstPlayer() {
+		Debug.Log (firstPlayer);
+		return firstPlayer;
 	}
 }
