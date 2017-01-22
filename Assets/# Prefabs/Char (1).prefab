@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 50965295265548348}
   - component: {fileID: 199785374263634432}
   - component: {fileID: 198353930201218140}
-  - component: {fileID: 111423976693121368}
   - component: {fileID: 95881990284948842}
   m_Layer: 0
   m_Name: Char (1)
@@ -191,20 +190,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &111423976693121368
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1884475864434746}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114035485147099176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,14 +201,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5b2af80b0922e45a5427512a13a228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteYOffset: 0.55
+  landSound: {fileID: 0}
+  jumpSound: {fileID: 0}
+  mySauce: {fileID: 0}
+  spriteYOffset: 0
   gravFactor: 0.007
-  advSpeed: 0.028
+  advSpeed: 0.045
   retrSpeed: 0
   airborneDrag: 0.1
   jumpFactor: 0.1
   constJump: 0.15
-  gamepad: 3
   keyboardJumpKey: space
   keyboardShootKey: ctrl
   lineHolder: {fileID: 0}
@@ -240,6 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 1
   cam: {fileID: 0}
+  mySauce: {fileID: 0}
+  getHitSound: {fileID: 0}
 --- !u!114 &114744587707900936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +243,11 @@ MonoBehaviour:
   BulletPrefab: {fileID: 1244671290671116, guid: e379fb98ad96f7041b476547954a7c57,
     type: 2}
   cam: {fileID: 0}
+  shootSound:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  mySauce: {fileID: 0}
   keyboardShootKey: left ctrl
 --- !u!198 &198073248841165468
 ParticleSystem:
@@ -310,7 +304,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1415891701
+  randomSeed: -1928322710
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -2905,7 +2899,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1202557862
+  randomSeed: 1675711960
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5500,7 +5494,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -171444686
+  randomSeed: -1564447188
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8232,7 +8226,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: a0b1dbe1086b0ae4d84ca27988250705, type: 3}
   m_Color: {r: 1, g: 0.9852941, b: 0.397, a: 1}
   m_FlipX: 0
