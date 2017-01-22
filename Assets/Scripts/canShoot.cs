@@ -33,7 +33,7 @@ public class canShoot : MonoBehaviour {
 
         shootButton = "joystick " + surf.GetGamePad() + " button 1"; // hacks :D
         timer += Time.deltaTime;
-		if ((Input.GetKeyDown(shootButton) || Input.GetKeyDown(keyboardShootKey)) && timer > 0.1f) {
+		if ((Input.GetKeyDown(shootButton) || Input.GetKeyDown(keyboardShootKey)) && timer > 1.5f) {
 			//Rotation doesnt work for some reason *~*
 			anim.SetTrigger("shoot");
 			mySauce.clip = shootSound[Random.Range(1,3)];

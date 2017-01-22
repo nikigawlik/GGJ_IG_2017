@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
 
 public class ScoreTrail : MonoBehaviour {
 	LineRenderer lineRend;
 
+	public GameObject canvas;
+
 	private List<Vector2> pointList = new List<Vector2>();
 	private const int maxPoints = 15;
 	private waveMotion waveMot;
 	private hasPoints points;
 
-	private const int maxScore = 200;
+	private const int maxScore = 300;
 	private Color playerColor;
 
 	public Vector2 deltaPos;
@@ -67,6 +70,13 @@ public class ScoreTrail : MonoBehaviour {
 			vec.x = vec.x - waveMot.getWaveSpeed () * (maxPoints-i);
 
 			lineRend.SetPosition(maxPoints-i-1, vec);
+		}
+
+		// WIN
+		if (points.points >= maxScore) {
+			canvas.SetActive (true);
+			canvas.transform.FindChild ("vikingdab").gameObject.GetComponent<Image> ().color = playerColor;
+			Debug.Log(this);
 		}
 	}
 }
