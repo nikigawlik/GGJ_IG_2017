@@ -10,7 +10,7 @@ public class hasPoints : MonoBehaviour {
 		points = 0;
 	}
 
-	void increasePoints(){
+	public void increasePoints(){
 		points++;
 	}
 }
