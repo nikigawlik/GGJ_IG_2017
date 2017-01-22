@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0d11a904761dcb54e944cf5069f8d398
+timeCreated: 1485087946
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 1st Enterprises Halftone
+  fontNames:
+  - 1st Enterprises Halftone
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

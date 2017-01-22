@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 663d2ab7bdfdd884bb97882b544ba16f
+timeCreated: 1485087947
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 1st Enterprises Chrome
+  fontNames:
+  - 1st Enterprises Chrome
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
