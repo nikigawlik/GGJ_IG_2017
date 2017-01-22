@@ -249,7 +249,6 @@ MonoBehaviour:
   coinPrefab: {fileID: 1246270023548736, guid: c83d70c8ed0785742b8cadcf58b0fbb6, type: 2}
   maxCoins: 10
   coinsPerFrame: 1
-  coinsPerHead: 0
 --- !u!4 &509474153
 Transform:
   m_ObjectHideFlags: 0
@@ -516,7 +515,7 @@ Prefab:
       objectReference: {fileID: 1492263862}
     - target: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940, type: 2}
       propertyPath: m_Name
-      value: Player Yellow
+      value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 212024631146800890, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -721,7 +720,7 @@ Prefab:
       objectReference: {fileID: 1547610466}
     - target: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940, type: 2}
       propertyPath: m_Name
-      value: Plazer Blue
+      value: Plazer 2
       objectReference: {fileID: 0}
     - target: {fileID: 198687631326360630, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -960,7 +959,7 @@ Prefab:
       objectReference: {fileID: 670147515}
     - target: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940, type: 2}
       propertyPath: m_Name
-      value: Player Green
+      value: Player 3
       objectReference: {fileID: 0}
     - target: {fileID: 198687631326360630, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}
@@ -1585,7 +1584,7 @@ Prefab:
       objectReference: {fileID: 1310453323}
     - target: {fileID: 1884475864434746, guid: 6b44e25589b294f41be20f1889965940, type: 2}
       propertyPath: m_Name
-      value: Player Red
+      value: Player 4
       objectReference: {fileID: 0}
     - target: {fileID: 198687631326360630, guid: 6b44e25589b294f41be20f1889965940,
         type: 2}

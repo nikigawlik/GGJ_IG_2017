@@ -19,43 +19,27 @@ public class dragonController : MonoBehaviour {
 	private GameObject[] coins;
 	private bool coinArrayFilled;
 	private int coinsCreatedThisFrame;
-	private Vector3 move;
-	public int coinsPerHead;
-	private int createdAtThor1;
-	private bool creatingAtThor2;
+
 
 	void Start(){
-		coinsPerHead = maxCoins;
-		firstPlayer = players[0];
 		coins = new GameObject[maxCoins];
 		coinArrayFilled = false;
-//		//Fill beforeHand!
 //		for (int counter = 0; counter < coins.Length; counter++) {
 //			coins[counter] = Instantiate (coinPrefab, thor1.transform.position, this.transform.rotation);
 //		}
 
 	}
 
+	// Update is called once per frame
 	void Update (){
 		//Determine player most right
-		for (int x = 0; x < 4; x++) {
-			if (firstPlayer.transform.position.x <= players [x].transform.position.x) {
-				firstPlayer = players [x];
-			}
-
-//			Debug.Log (firstPlayer);
-			for (int counter = 0; counter < coins.Length; counter++) {
-				if (coins [counter] != null) {
-
-
-					if (Vector3.Distance (coins [counter].transform.position, firstPlayer.transform.position) <= .5) {
-						Destroy (coins [counter]);
-					}
-					coins [counter].gameObject.GetComponent<MeshRenderer> ().material.color = firstPlayer.GetComponent<SpriteRenderer> ().color;
-				}
+		float highScore = 0;
+		foreach (GameObject player in players) {
+			if (highScore < player.transform.position.x) {
+				highScore = player.transform.position.x;
+				firstPlayer = player;
 			}
 		}
-
 	}
 
 
@@ -64,24 +48,8 @@ public class dragonController : MonoBehaviour {
 			for (int counter = 0; counter < coins.Length; counter++) {
 				if (coins [counter] == null && coinsCreatedThisFrame < coinsPerFrame) {
 					coinsCreatedThisFrame++;
-
-					if (createdAtThor1 >= coinsPerHead)
-						creatingAtThor2 = true;
-					else if (createdAtThor1 <= 0) {
-						creatingAtThor2 = false;
-					}
-
-					if (creatingAtThor2 == false) {
-						coins [counter] = Instantiate (coinPrefab, thor1.transform.position, this.transform.rotation);
-						createdAtThor1++;
-						coins [counter].GetComponent<coinController> ().coinVelocity = new Vector3 (Random.Range (-0.01f, -0.2f),Random.Range (0.2f, 0.7f), 0f);
-					} else if (creatingAtThor2 == true) {
-						coins [counter] = Instantiate (coinPrefab, thor2.transform.position, this.transform.rotation);
-						createdAtThor1--;
-						coins [counter].GetComponent<coinController> ().coinVelocity = new Vector3 (Random.Range (-0.01f, -0.2f),Random.Range (-0.2f, -0.7f), 0f);
-					}
-
-
+					coins [counter] = Instantiate (coinPrefab, thor1.transform.position, this.transform.rotation);
+					coins [counter].GetComponent<coinController> ().coinVelocity = new Vector3 (Random.Range (-0.01f, -0.7f),Random.Range (-0.01f, -0.7f), 0f);
 				} else if (coinsCreatedThisFrame >= coinsPerFrame) {
 					break;
 				}
@@ -92,10 +60,16 @@ public class dragonController : MonoBehaviour {
 
 		for (int counter = 0; counter < coins.Length; counter++) {
 			if (coins [counter] != null) {
-				
-				move = ( firstPlayer.transform.position - coins [counter].transform.position );
+				coins [counter].gameObject.GetComponent<MeshRenderer> ().material.color = firstPlayer.GetComponent<SpriteRenderer> ().color;
+
+				Vector3 move = (firstPlayer.transform.position - coins [counter].transform.position);
 				move.Normalize ();
 				coins [counter].GetComponent<coinController> ().moveCoin (move);
+			
+
+				if (Vector3.Distance (coins [counter].transform.position, firstPlayer.transform.position) <= 1) {
+					Destroy (coins [counter]);
+				}
 			}
 		}
 		//Head Movement
