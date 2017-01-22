@@ -27,7 +27,7 @@ public class getData : MonoBehaviour {
 
 			// set boxes
 			UiManager um = GameObject.Find("UIManager").GetComponent<UiManager>();
-			um.SetPlayers (players);
+				um.SetPlayers (players);
             
         }
     }
