@@ -36,7 +36,7 @@ public class WaveSurf : MonoBehaviour {
     public GameObject lineHolder;
 	private GameObject[] lineHolders;
 
-	private WavePointGenerator wavePointGen;
+	//private WavePointGenerator wavePointGen;
 	private waveMotion waveMot;
 
 	private bool airborne = false;
@@ -71,7 +71,7 @@ public class WaveSurf : MonoBehaviour {
 
 
     void UpdateWaveComps () {
-		wavePointGen = lineHolder.GetComponent<WavePointGenerator> ();
+		//wavePointGen = lineHolder.GetComponent<WavePointGenerator> ();
 		waveMot = lineHolder.GetComponent<waveMotion> ();
 	}
 
@@ -93,8 +93,12 @@ public class WaveSurf : MonoBehaviour {
 			foreach (GameObject wave in lineHolders) 
 			{
 				waveMot = wave.GetComponent<waveMotion> ();
-				if ((oldPos.y >= waveMot.GetYAt (oldPos.x) || veryOldPos.y >= waveMot.GetYAt (veryOldPos.y)) && pos.y <= waveMot.GetYAt (pos.x) ||
-				   (oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt (veryOldPos.y)) && pos.y >= waveMot.GetYAt (pos.x)) {
+
+				float waveY = waveMot.GetYAt (pos.x);
+
+				//if ((oldPos.y >= waveMot.GetYAt (oldPos.x) || veryOldPos.y >= waveMot.GetYAt (veryOldPos.y)) && pos.y <= waveMot.GetYAt (pos.x) ||
+				//   (oldPos.y <= waveMot.GetYAt (oldPos.x) || veryOldPos.y <= waveMot.GetYAt (veryOldPos.y)) && pos.y >= waveMot.GetYAt (pos.x)) {
+				if ((oldPos.y < waveY && pos.y >= waveY) || (oldPos.y >= waveY && pos.y < waveY)) {
 
 					airborne = false;
 					//print (this.gameObject.GetComponent<Animator> ().GetParameter (0));

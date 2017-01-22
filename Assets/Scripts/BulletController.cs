@@ -8,11 +8,12 @@ public class BulletController : MonoBehaviour {
 	public Quaternion Rotation;
 	float screenWidth;
 	float screenHeight;
-	public Camera cam;
+	public Camera cam; // has to be public
 
 
 	// Use this for initialization
 	void Start () {
+		cam = Camera.main;
 		this.transform.rotation = Rotation;
 		screenWidth = 2f * cam.orthographicSize * cam.aspect;
 		screenHeight = 2f * cam.orthographicSize;
