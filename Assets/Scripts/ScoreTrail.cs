@@ -14,7 +14,7 @@ public class ScoreTrail : MonoBehaviour {
 	private waveMotion waveMot;
 	private hasPoints points;
 
-	private const int maxScore = 300;
+	private const int maxScore = 100;
 	private Color playerColor;
 
 	public Vector2 deltaPos;
