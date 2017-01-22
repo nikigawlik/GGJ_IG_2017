@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class listenForGamepads : MonoBehaviour {
 
     int[] playerControllerIds = new int[4];
 
-    public GameObject[] textFields;
+    public Text[] textFields;
+    public Image[] idles;
+    public Color [] colors;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +39,8 @@ public class listenForGamepads : MonoBehaviour {
                 playerControllerIds[i] = joystickId;
                 Debug.Log("Gamepad connected at id " + joystickId);
 
-                textFields[i].SetActive(false);
+                textFields[i].gameObject.SetActive(false);
+                idles[i].color = colors[i];
 
                 break;
             }
