@@ -122,14 +122,14 @@ public class WaveSurf : MonoBehaviour {
 		//-------------------X Movement
 		if (isAirborne ()) {
 			// drag 
-			velocity.x = -(airborneDrag * ((pos.x + 10)/20));
+			velocity.x = -(airborneDrag * ((pos.x + 13)/20));
 
 			//Explaination? See below!
 
 		} else {
 			//Screen X coordinates range from -10 to 10 
 			//velocity should be 1*advSpeed on the very left and 0*advSpeed on the far right
-			velocity.x = advSpeed * (1-(pos.x + 10)/20);
+			velocity.x = advSpeed * (1-(pos.x + 13)/20);
 		}
 		//------------------Y Movement
 		if (!isAirborne ()) {

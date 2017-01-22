@@ -33,14 +33,14 @@ public class canShoot : MonoBehaviour {
 
         shootButton = "joystick " + surf.GetGamePad() + " button 1"; // hacks :D
         timer += Time.deltaTime;
-		if ((Input.GetKeyDown(shootButton) || Input.GetKeyDown(keyboardShootKey)) && timer > 1) {
+		if ((Input.GetKeyDown(shootButton) || Input.GetKeyDown(keyboardShootKey)) && timer > 0.1f) {
 			//Rotation doesnt work for some reason *~*
 			anim.SetTrigger("shoot");
 			mySauce.clip = shootSound[Random.Range(1,3)];
 			mySauce.Play ();
 			GameObject bullet = Instantiate (BulletPrefab, this.transform.position, this.transform.rotation);
-			//Direction:
-			bullet.GetComponent<BulletController> ().speed = this.transform.rotation * Vector3.right;
+            //Direction:
+            bullet.GetComponent<BulletController> ().speed = this.transform.rotation * Vector3.right;
 			bullet.GetComponent<BulletController> ().cam = this.cam;
 			timer = 0;
 
