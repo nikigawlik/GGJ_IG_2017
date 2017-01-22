@@ -22,18 +22,18 @@ public class getData : MonoBehaviour {
         {
             if (joystickIds[i] <= 0)
                 GameObject.Destroy(players[i]);
+			
             players[i].GetComponent<WaveSurf>().SetGamepadId(joystickIds[i]);
-            Debug.Log(i);
+
+			// set boxes
+			UiManager um = GameObject.Find("UIManager").GetComponent<UiManager>();
+			um.SetPlayers (players);
+            
         }
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        for (int i = 1; i < 12; i++)
-        {
-            if (Input.GetKeyDown("joystick " + i + " button 0"))
-                Debug.Log(i);
-        }
     }
 }

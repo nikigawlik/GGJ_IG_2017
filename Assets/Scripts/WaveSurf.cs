@@ -22,7 +22,7 @@ public class WaveSurf : MonoBehaviour {
 	public float jumpFactor;
 	public float constJump;
 	private Vector2 oldPos;
-	private Vector2 veryOldPos;
+//	private Vector2 veryOldPos;
 	private Vector2 velocity;
 	private float targetRotation;
     
@@ -142,7 +142,7 @@ public class WaveSurf : MonoBehaviour {
 
 
 		//For Landing
-		veryOldPos = oldPos;
+		//veryOldPos = oldPos;
 		oldPos = pos;
 		pos = pos + velocity;
 
