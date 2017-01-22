@@ -6,10 +6,7 @@ using System;
 
 public class waveMotion : MonoBehaviour
 {
-    public float amplitude = 1; 
-    public float speed;
     public float pointDistance;
-	private float speedhub = 0;
     public Color startColor;
     public Color endColor;
     [Tooltip("EndColor = StartColor")]
@@ -35,6 +32,7 @@ public class waveMotion : MonoBehaviour
             lineRenderer.endColor = endColor;
         }
 
+        cam = Camera.main;
 		screenWidth = 2f * cam.orthographicSize * cam.aspect;
 		pointDistance = screenWidth / lineRenderer.numPositions;
     }
@@ -42,10 +40,8 @@ public class waveMotion : MonoBehaviour
 
     void FixedUpdate()
     {
-        speedhub = speedhub + speed;
         LineRenderer lineRenderer = gameObject.GetComponent<LineRenderer>();
         int i = 0;
-        float currentTime = Time.time + speedhub;
 
 		while (i < lineRenderer.numPositions)
         {

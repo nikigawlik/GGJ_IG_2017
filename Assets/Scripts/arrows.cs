@@ -8,15 +8,15 @@ public class arrows : MonoBehaviour {
 	private Vector3 screenPos;
 	private Camera cam;
 	private GameObject character;
-	private SpriteRenderer renderer;
+	private SpriteRenderer arrowRenderer;
 	public float objectSize = 0.33f;
 
 	// Use this for initialization
 	void Start () {
-		renderer = gameObject.GetComponent<SpriteRenderer> ();
+		arrowRenderer = gameObject.GetComponent<SpriteRenderer> ();
 		character = GameObject.FindGameObjectsWithTag("Player")[playerNr];
-		renderer.color = character.GetComponent<SpriteRenderer> ().color;
-		renderer.enabled = false;
+		arrowRenderer.color = character.GetComponent<SpriteRenderer> ().color;
+		arrowRenderer.enabled = false;
 		cam = Camera.main;
 	}
 	
@@ -27,15 +27,15 @@ public class arrows : MonoBehaviour {
 //			Debug.Log ("yay");
 			gameObject.GetComponent<SpriteRenderer> ().flipY = true;
 			transform.position = new Vector3 (character.transform.position.x,cam.orthographicSize-objectSize, 2.0f);
-			renderer.enabled = true;
+			arrowRenderer.enabled = true;
 		}
 		else if (screenPos.y < 0.0f) {
 			gameObject.GetComponent<SpriteRenderer> ().flipY = false;
 			transform.position = new Vector3 (character.transform.position.x, -(cam.orthographicSize - objectSize), 2.0f);
-			renderer.enabled = true;
+			arrowRenderer.enabled = true;
 		} else {
 			//Debug.Log (screenPos.y);
-			renderer.enabled = false;
+			arrowRenderer.enabled = false;
 		}
 	}
 
