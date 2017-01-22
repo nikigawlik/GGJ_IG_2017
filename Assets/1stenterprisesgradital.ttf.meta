@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 52af0fc3f09df1243aadfc603dcd4b09
+timeCreated: 1485087947
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 1st Enterprises Gradient Italic
+  fontNames:
+  - 1st Enterprises Gradient Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
