@@ -25,9 +25,6 @@ public class getData : MonoBehaviour {
 			
             players[i].GetComponent<WaveSurf>().SetGamepadId(joystickIds[i]);
 
-			// set boxes
-			UiManager um = GameObject.Find("UIManager").GetComponent<UiManager>();
-				um.SetPlayers (players);
             
         }
     }
